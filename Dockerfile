@@ -22,8 +22,8 @@ FROM nginx:alpine
 COPY nginx /etc/nginx/
 COPY --from=deploy --chown=nginx:nginx /app/public /usr/share/nginx/html
 RUN touch /var/run/nginx.pid \
-    && chown nginx:nginx /var/run/nginx.pid \
-    && chown -R nginx:nginx /var/cache/nginx
+  && chown nginx:nginx /var/run/nginx.pid \
+  && chown -R nginx:nginx /var/cache/nginx
 
 USER nginx
 
