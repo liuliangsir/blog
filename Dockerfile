@@ -6,7 +6,7 @@ COPY repositories ${REPOSITORIES}
 
 RUN apk add --no-cache python make g++ \
   && rm -fR /var/cache/apk/* \
-  && npm install -g gatsby-cli yarn
+  && npm install -g gatsby-cli
 
 WORKDIR /app
 
