@@ -1,4 +1,7 @@
-# A13 编辑器的日子
+---
+title: A13 编辑器的日子
+date: "2020-03-08T19:44:03"
+---
 
 ## 背景
 
@@ -10,7 +13,7 @@
 
 总的来说，整个 A13 技术有三个方向，分别为服务端、引擎以及“大”前端；“大”前端里面又分 Android、iOS 以及前端；前端里面又被分成三个方向，分别为[编辑器](https://avg.163.com/creator/home)、[官网](https://avg.163.com)以及[管理系统](http://59.111.129.56:2004/verify)。
 
-![A13 技术团队概览](https://i.imgur.com/lyhT8Ne.png)
+![A13 技术团队概览](https://i.loli.net/2020/03/13/wIGBbKj2oyOcqWU.png)
 
 ### 职责
 
