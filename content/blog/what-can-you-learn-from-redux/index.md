@@ -1,6 +1,6 @@
 ---
 title: What Can We Learn From Redux
-date: "2019-03-06T09:01:58"
+date: "2019-12-04T09:01:58"
 ---
 
 ![redux](https://i.loli.net/2020/03/13/rjbfC6yDavoQIFL.png)

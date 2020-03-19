@@ -55,9 +55,9 @@ const Bio = () => {
       />
       <p>
         Written by <strong>{author}</strong>, who lives and works in Canton and
-        wanna become a professional frontend developer.
+        wanna become a professional web developer.
         {` `}
-        <a href={`mailto:${social.email}`}>You can feel free to contact him</a>
+        <a href={`mailto:${social.email}`}>You can feel free to contact him</a>.
       </p>
     </div>
   )
