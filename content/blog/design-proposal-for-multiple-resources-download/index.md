@@ -17,7 +17,7 @@ date: "2020-04-11T14:16:25"
 
 ### 流程图
 
-![逐个下载.png](http://ww1.sinaimg.cn/large/d58e2729gy1gdps76orp5j206f0j63yu.jpg)
+![逐个下载.png](https://ww1.sinaimg.cn/large/d58e2729gy1gdps76orp5j206f0j63yu.jpg)
 
 ### 优点
 
@@ -40,7 +40,7 @@ date: "2020-04-11T14:16:25"
 
 ### 流程图
 
-![打包下载.png](http://ww1.sinaimg.cn/large/d58e2729gy1gdps76owasj20c90m9t9b.jpg)
+![打包下载.png](https://ww1.sinaimg.cn/large/d58e2729gy1gdps76owasj20c90m9t9b.jpg)
 
 ### 优点
 
