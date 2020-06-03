@@ -63,7 +63,9 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Proudly powered by
+          © {new Date().getFullYear()}, Made with{` `}
+          <span style="color: rgb(255, 255, 255);">❤</span> and proudly powered
+          by
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>.
         </footer>
