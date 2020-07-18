@@ -6,10 +6,9 @@ import { rhythm, scale } from "../utils/typography"
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
 
-    if (location.pathname === rootPath) {
+    let header
+    if (location.pathname === `${__PATH_PREFIX__}/`) {
       header = (
         <h1
           style={{
@@ -51,6 +50,8 @@ class Layout extends React.Component {
         </h3>
       )
     }
+    const heart = <span style={{ color: "rgb(255, 255, 255)" }}>❤</span>
+
     return (
       <div
         style={{
@@ -64,8 +65,7 @@ class Layout extends React.Component {
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Made with{` `}
-          <span style="color: rgb(255, 255, 255);">❤</span> and proudly powered
-          by
+          {heart} and proudly powered by
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>.
         </footer>
