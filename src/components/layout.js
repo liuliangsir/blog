@@ -50,7 +50,7 @@ class Layout extends React.Component {
         </h3>
       )
     }
-    const heart = <span style={{ color: "rgb(255, 255, 255)" }}>❤</span>
+    const heart = <span style={{ color: "rgb(255, 0, 0)" }}>❤</span>
 
     return (
       <div
