@@ -4,7 +4,7 @@ ENV NODE_ENV=production
 ENV REPOSITORIES=/etc/apk/repositories
 COPY repositories ${REPOSITORIES}
 
-RUN apk add --no-cache python make g++ \
+RUN apk add --update --no-cache python3 python3-dev gcc libpng-dev autoconf automake make g++ libtool nasm\
   && rm -fR /var/cache/apk/* \
   && npm install -g gatsby-cli
 

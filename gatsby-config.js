@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `Blog`,
-    author: `流浪大法师`,
+    author: {
+      name: `流浪大法师`,
+      summary: `, who lives and works in Canton and wanna become a professional web developer.`,
+    },
     description: `A blog recording how to become a professional frontend developer`,
     siteUrl: `https://webfrontend.dev`,
     social: {
-      twitter: `liuliangsir`,
-      email: `liuliang@webfrontend.dev`
+      email: `liuliang@webfrontend.dev`,
     },
   },
   plugins: [
@@ -31,7 +33,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 630,
             },
           },
           {
@@ -67,13 +69,9 @@ module.exports = {
         icon: `content/assets/profile-pic.jpg`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }

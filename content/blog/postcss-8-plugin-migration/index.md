@@ -2,7 +2,11 @@
 title: PostCSS 8 插件迁移的二三事
 date: "2020-09-20T12:44:03"
 ---
-> 原文链接：<https://evilmartians.com/chronicles/postcss-8-plugin-migration>
+本文已获得原作者（Andrey Sitnik）和 Evil Martians 授权许可进行翻译。原文介绍了如何把 PostCSS 插件给迁移到 PostCSS 8.0。
+
+- 原文链接：[postcss 8 plugin migration](https://evilmartians.com/chronicles/postcss-8-plugin-migration)
+- 作者：[Andrey Sitnik](https://twitter.com/sitnikcode)
+- 站点：Evil Martians ——位于纽约和俄罗斯的 Ruby on Rails 开发人员博客。 它发布了许多优秀的文章，并且是不少 gem 的赞助商
 
 随着 8.0 版本的发布，PostCSS 也迎来了一次大版本的更新，该版本的代号被命名为“欧赛魔神”（President Ose）。经过这次更新之后，PostCSS 插件的作者可以有选择性地使用一新 API，该 API 能够提升构建速度以及减少插件用户安装依赖的体积。该指南旨在描述一些内容：作为一个插件开发者，为了能够“掏空”（make the most out of） 新 PostCSS，你所需要采取的一些步骤。
 
