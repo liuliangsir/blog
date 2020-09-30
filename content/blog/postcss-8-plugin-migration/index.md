@@ -73,9 +73,9 @@ npm install postcss --save-dev
 
 1. 用 `module.exports = creator` 代替 `module.exports = postcss.plugin(name, creator)`。
 
-2. 返回一个对象，该对象里面包含 `postcssPlugin` 属性以及 `Root` 方法，`postcssPlugin` 属性值为插件名。
+2. 返回一个对象，该对象里面包含 `postcssPlugin` 属性以及 `Once` 方法，`postcssPlugin` 属性值为插件名。
 
-3. 把之前的插件代码移到 `Root` 方法里面。
+3. 把之前的插件代码移到 `Once` 方法里面。
 
 4. 在文件的最后加上 `module.exports.postcss = true`。
 
@@ -97,7 +97,7 @@ npm install postcss --save-dev
 +   checkOpts(opts)
 +   return {
 +     postcssPlugin: 'postcss-dark-theme-class',
-+     Root (root, { result }) => {
++     Once (root, { result }) => {
         root.walkAtRules(atrule => { … })
 +     }
 +   }
@@ -116,7 +116,7 @@ PostCSS 8.x 会对 CSS 树进行一次扫描。多个插件可以借用这次扫
 ```bash
   module.exports = {
     postcssPlugin: 'postcss-dark-theme-class',
--   Root (root) {
+-   Once (root) {
 -     root.walkAtRules(atRule => {
 -       // Slow
 -     })
@@ -147,7 +147,7 @@ PostCSS 8.x 会对 CSS 树进行一次扫描。多个插件可以借用这次扫
   module.exports.postcss = true
 ```
 
-注意，插件将会再次遍历那些所有变更过或者新增的节点。所以你应该主动去检查插件执行转换的这个流程是否已经被执行过，以及判断该种情况是否需要忽略这些节点。记住只有 `Root` 以及 `RootExit` 监听器（listener）才只会被真正调用一次。
+注意，插件将会再次遍历那些所有变更过或者新增的节点。所以你应该主动去检查插件执行转换的这个流程是否已经被执行过，以及判断该种情况是否需要忽略这些节点。记住只有 `Once` 以及 `OnceExit` 监听器（listener）才只会被真正调用一次。
 
 ```bash
 const plugin = () => {
@@ -167,7 +167,7 @@ await postcss([plugin]).process("a { color: black }", { from });
 
 如果你的插件大到难以被重写，继续在 `Root` 监听器（listener）里面使用 `walk` 方法也不失为一种方法。
 
-新版的 PostCSS 包含两种不同类型的监听器（listener）：“enter” 以及 “exit”。`Root`、`AtRule`、或者 `Rule` 方法会在该节点下的所有子元素被处理之前调用。`RootExit`、`AtRuleExit` 以及 `RuleExit` 会在该节点下的所有子元素被处理之后调用。
+新版的 PostCSS 包含两种不同类型的监听器（listener）：“enter” 以及 “exit”。`Once`、`Root`、`AtRule`、或者 `Rule` 方法会在该节点下的所有子元素被处理之前调用。`OnceExit`、`RootExit`、`AtRuleExit` 以及 `RuleExit` 会在该节点下的所有子元素被处理之后调用。
 
 如果你需要在两个监听器之间共享数据，你可以使用 `prepare()`：
 
@@ -183,7 +183,7 @@ module.exports = (opts = {}) => {
             variables[node.prop] = node.value;
           }
         },
-        RootExit() {
+        OnceExit() {
           console.log(variables);
         },
       };
@@ -201,8 +201,8 @@ module.exports = (opts = {}) => {
 
   module.exports = {
     postcssPlugin: 'postcss-example',
--   Root (root) {
-+   Root (root, { list, Declaration }) {
+-   Once (root) {
++   Once (root, { list, Declaration }) {
       …
     }
   }
