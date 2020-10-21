@@ -4,28 +4,26 @@ ENV NODE_ENV=production
 ENV REPOSITORIES=/etc/apk/repositories
 COPY repositories ${REPOSITORIES}
 
-RUN apk add --update --no-cache python3 python3-dev gcc libpng-dev autoconf automake make g++ libtool nasm\
-  && rm -fR /var/cache/apk/* \
-  && npm install -g gatsby-cli
+RUN apk add vips-dev fftw-dev build-base python3 python3-dev autoconf automake libtool nasm --update --no-cache \
+  && rm -fR /var/cache/apk/*
 
 WORKDIR /app
 
+COPY ./.npmrc .
 COPY ./package.json .
-RUN yarn install --frozen-lockfile --non-interactive \
-  && yarn cache clean
+RUN npm install \
+  && npm cache clean -f \
+  && npm run info
 
 COPY . .
-RUN yarn build
+RUN npm run build
 
 FROM nginx:alpine
 
 COPY nginx /etc/nginx/
-COPY --from=deploy --chown=nginx:nginx /app/public /usr/share/nginx/html
-RUN touch /var/run/nginx.pid \
-  && chown nginx:nginx /var/run/nginx.pid \
-  && chown -R nginx:nginx /var/cache/nginx
-
-USER nginx
+RUN rm /usr/share/nginx/html/*
+COPY --from=deploy /app/public /usr/share/nginx/html/
+RUN ls /usr/share/nginx/html -l
 
 EXPOSE 8080
 HEALTHCHECK CMD [ "wget", "-q", "localhost:8080" ]
