@@ -17,7 +17,7 @@ date: "2020-04-11T14:16:25"
 
 ### 流程图
 
-![逐个下载.png](https://ww1.sinaimg.cn/large/d58e2729gy1gdps76orp5j206f0j63yu.jpg)
+![逐个下载.png](https://user-images.githubusercontent.com/8049878/98204241-a16cea80-1f70-11eb-9e82-fcf3386bc912.jpg)
 
 ### 优点
 
@@ -40,7 +40,7 @@ date: "2020-04-11T14:16:25"
 
 ### 流程图
 
-![打包下载.png](https://ww1.sinaimg.cn/large/d58e2729gy1gdps76owasj20c90m9t9b.jpg)
+![打包下载.png](https://user-images.githubusercontent.com/8049878/98204409-f6106580-1f70-11eb-9ce9-bb04d94f780b.jpg)
 
 ### 优点
 
@@ -54,7 +54,7 @@ date: "2020-04-11T14:16:25"
 
 ### 耗时
 
-png(2.82M * 36) | jpg(3.42M * 36) | gif(3.65M * 36) | mp3(9.73M * 36)
+png(2.82M \* 36) | jpg(3.42M \* 36) | gif(3.65M \* 36) | mp3(9.73M \* 36)
 :-:|:-:|:-:|:-:
 33173 ms | 47124 ms | 131480 ms | 242303 ms
 
