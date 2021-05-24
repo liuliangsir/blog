@@ -3,7 +3,7 @@ title: 使用 gitlab page 预览交互稿以及设计稿
 date: "2020-10-12T12:00:03"
 ---
 
-由于 [avg-product-1](https://gitlab.nie.netease.com/a13/avg-product-1) 项目本身的体积过于庞大，导致用户在第一次 clone 的过程里面，需要花费大量的时间。不过，这种情况在一定条件下（用户使用内网）会有所缓解。在用户 clone 的操作完成之后，用户需要自己启动本地浏览器来打开对应的交互稿以及设计稿。经常重复这样的操作，这本身也是件很无趣的事情。注意，接下来的这种方式只是简化上面的流程。换句话说，在一些情况下用户仍然需要 clone [avg-product-1](https://gitlab.nie.netease.com/a13/avg-product-1)。
+由于 [avg-product-1](https://g.126.fm/038sB52) 项目本身的体积过于庞大，导致用户在第一次 clone 的过程里面，需要花费大量的时间。不过，这种情况在一定条件下（用户使用内网）会有所缓解。在用户 clone 的操作完成之后，用户需要自己启动本地浏览器来打开对应的交互稿以及设计稿。经常重复这样的操作，这本身也是件很无趣的事情。注意，接下来的这种方式只是简化上面的流程。换句话说，在一些情况下用户仍然需要 clone [avg-product-1](https://g.126.fm/038sB52)。
 
 ## 思路
 
@@ -18,7 +18,7 @@ date: "2020-10-12T12:00:03"
 1. 使用 cache 机制
 2. 使用 `git show`，减少不必要的 CI 构建
 3. 使用系统自带的 bash 脚本，减少不必要的第三方包（库）引入
-4. 使用 [`git push -o ci.skip`](https://docs.gitlab.com/ee/user/project/push_options.html#push-options-for-gitlab-cicd) 或者 [commit 信息中包含 `[skip ci]` 、`[skip ci]`](https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci)，跳过不必要的 CI 构建
+4. 使用 [`git push -o ci.skip`](https://docs.gitlab.com/ee/user/project/push_options.html#push-options-for-gitlab-cicd) 或者 [commit 信息中包含 `[skip ci]` 、`[ci skip]`](https://devops.stackexchange.com/questions/6809/is-there-a-ci-skip-option-in-gitlab-ci)，跳过不必要的 CI 构建
 
 ## TODO
 
